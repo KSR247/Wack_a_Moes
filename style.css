@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ffc600;
+    overflow: hidden;
+    text-align: center;
+    height: 100vh;
+}
+
+.game {
+    display: flex;
+    flex: 1 0 33.33;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 150px 80px;
+    
+
+}
+
+/* The field, home of the mole */
+
+.field {
+background-image: url(/img/moes.png);
+ margin-bottom: 150px;
+ height: 150px;
+ width: 350px;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ overflow: hidden;
+ z-index: 2; 
+
+}
+
+.field::after {    /* move field img infront of homer*/
+    z-index: 2;
+}
+
+/* The mole, in this case is homer */
+
+.homer {
+    background-image: url(/img/homer.png);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition:all 0.4s;
+
+
+}
+
+.up  .homer{
+    top: 0%;
+  }
+
