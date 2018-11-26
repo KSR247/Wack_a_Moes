@@ -2,11 +2,10 @@ const fields = document.querySelectorAll('.field');
 const scoreBoard = document.querySelector('.score');
 const homers = document.querySelectorAll('.homer');
 const newGame = document.getElementById('startGame');
-let restart = newGame.display = "block";
+const progressBar = document.getElementById("progressBar");
 let lastField;
 let timeUp = false;
 let score = 0;
-
 
 
 //-------------- random time function ----------------
@@ -15,7 +14,7 @@ function randomTime(max, min) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
-// ------------- random hole selector -----------------
+// ------------- random bar selector -----------------
 
 function randomHole(fields) {
     const idx = Math.floor(Math.random() * fields.length);
@@ -27,10 +26,10 @@ function randomHole(fields) {
     return lastField
 }
 
-// ---- pop up fucntion, mole will pop up in random fields at ramdom times, until time runs out. -------
+// ---- pop up fucntion, homer will pop up in random bars(fields) at ramdom times, until time runs out. -------
 
 function peep() {
-    const time = randomTime(200, 1000);
+    const time = randomTime(200, 2000);
     const field = randomHole(fields);
     field.classList.add('up');
     setTimeout(() => {
@@ -40,26 +39,39 @@ function peep() {
       
 }
 
-//------------- start game function, will run for 10 seconds. ---------------------------
+//------------- start game function, progress bar will show and run for 10 seconds ----
+
+
 
 newGame.addEventListener('click', function(){
-    newGame.style.display = "none";
     scoreBoard.textContent = 0;
     timeUp = false;
     score = 0;
-    peep();
-    setTimeout(() => timeUp = true, 20000, restart)
+    newGame.style.display = 'none';
+    progressBar.style.display = 'block';
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+        progressBar.value = 10 - --timeleft;
+    if(timeleft <= 0){
+        newGame.style.display = 'block';
+        progressBar.style.display = 'none';
+        clearInterval(downloadTimer);
+        }},1000);
+        peep();
+    setTimeout(() => timeUp = true, 10000)
 
 });
 
-// --------  score counter, will add to the score evertime a mole is cliked. --------
+// --------  score counter, will add to the score everytime a homer is clicked. --------
 
-function bonk(e) {
+function hit(e) {
     if(!e.isTrusted) return; // cheater!
     score++;
     this.parentNode.classList.remove('up');
     scoreBoard.textContent = score;
   }
   homers.forEach(function(homer) {
-      homer.addEventListener('click', bonk)
+      homer.addEventListener('click', hit)
     });
+
+    

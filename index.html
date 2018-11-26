@@ -9,12 +9,15 @@
 </head>
 <body>
     
-  <h1>Whack-A-Moe's! <span class="score">0</span></h1>
-  <button id="startGame" >Start!</button>
+  <h1>Whack-A-Moe's! <br> <span>Score</span> <span class="score">0</span></h1>
+  <button id="startGame" >Start!</button><br><progress value="0" max="10" id="progressBar"></progress>
     <div class="wrapper">
+        <div id="gameOver" class="gameOver">
+            <h2>GAME OVER</h2> <br> <h2>Your score is <span class="score">0</span> </h2><button id="restartGame" >Restart</button>
+        </div>
         <div class="game">
             <div class="field field1">
-            <div id="homer" class="homer"></div>
+            <div class="homer"></div>
             </div>
             <div class="field field2">
             <div class="homer"></div>

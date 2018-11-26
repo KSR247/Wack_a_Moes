@@ -7,7 +7,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #ffc600;
+    background-color: #f5c310;
     overflow: hidden;
     text-align: center;
     height: 100vh;
@@ -18,7 +18,7 @@ body {
     flex: 1 0 33.33;
     flex-flow: row wrap;
     justify-content: space-around;
-    margin: 150px 80px;
+    margin: 70px 0px;
     
 
 }
@@ -27,7 +27,7 @@ body {
 
 .field {
 background-image: url(/img/moes.png);
- margin-bottom: 150px;
+ margin-bottom: 50px;
  height: 150px;
  width: 350px;
  background-position: center;
@@ -49,7 +49,7 @@ background-image: url(/img/moes.png);
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 40%;
+    background-size: 35%;
     top: 100%;
     width: 100%;
     height: 100%;
@@ -62,3 +62,23 @@ background-image: url(/img/moes.png);
     top: 0%;
   }
 
+#startGame {
+    font-size: 2rem;
+    text-align: center;
+    align-content: center;
+}
+
+h1 {
+    font-family: 'Bubblegum', cursive;
+    font-size: 3rem;
+}
+
+/* progress bar is hidden until the game starts. */
+
+#progressBar {
+    display: none;
+}
+
+.gameOver {
+    display: block;
+}
