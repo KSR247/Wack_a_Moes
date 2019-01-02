@@ -2,6 +2,7 @@ const fields = document.querySelectorAll('.field');
 const scoreBoard = document.querySelector('.score');
 const homers = document.querySelectorAll('.homer');
 const newGame = document.getElementById('startGame');
+const restartGame = document.getElementById('restartGame');
 const progressBar = document.getElementById("progressBar");
 let lastField;
 let timeUp = false;
