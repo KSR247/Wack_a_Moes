@@ -26,7 +26,7 @@ body {
 /* The field, home of the mole */
 
 .field {
-background-image: url(../img/moes.png);
+background-image: url(./img/moes.png);
  margin-bottom: 50px;
  height: 150px;
  width: 350px;
@@ -45,7 +45,7 @@ background-image: url(../img/moes.png);
 /* The mole, in this case is homer */
 
 .homer {
-    background-image: url(../img/homer.png);
+    background-image: url(./img/homer.png);
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
